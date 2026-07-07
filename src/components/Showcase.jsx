@@ -1,8 +1,11 @@
+import Reveal from "./Reveal";
+
 export default function Showcase() {
   return (
     <section id="projects" className="py-24 relative bg-white/50 border-t border-stone-200/50">
       <div className="max-w-7xl mx-auto px-6 space-y-12">
         {/* 區塊標題 */}
+        <Reveal>
         <div className="space-y-4">
           <h2 className="text-3xl md:text-5xl font-bold text-stone-800 tracking-tight">
             Featured <span className="text-emerald-700">Research</span>
@@ -11,8 +14,10 @@ export default function Showcase() {
             Computational Material Science &amp; AI Integration
           </p>
         </div>
+        </Reveal>
 
         {/* 海報展示區塊 (Glassmorphism 卡片) */}
+        <Reveal delay={150}>
         <div className="bg-white/70 backdrop-blur-md border border-stone-200 rounded-3xl overflow-hidden p-6 md:p-8 hover:border-emerald-300 transition-colors duration-300 shadow-xl shadow-stone-200/50">
           <div className="flex flex-col md:flex-row items-center gap-8">
             {/* 說明文字區 */}
@@ -44,6 +49,7 @@ export default function Showcase() {
             </div>
           </div>
         </div>
+        </Reveal>
       </div>
     </section>
   );

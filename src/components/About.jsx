@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 export default function About() {
   return (
     <section id="about" className="py-24 relative overflow-hidden">
@@ -6,9 +8,12 @@ export default function About() {
           
           {/* 左側：文字介紹 */}
           <div className="md:w-1/2 space-y-6">
-            <h2 className="text-3xl md:text-5xl font-bold text-stone-800 tracking-tight">
-              About <span className="text-emerald-700">Me</span>
-            </h2>
+            <Reveal>
+              <h2 className="text-3xl md:text-5xl font-bold text-stone-800 tracking-tight">
+                About <span className="text-emerald-700">Me</span>
+              </h2>
+            </Reveal>
+            <Reveal delay={150}>
             <div className="space-y-4 text-stone-600 leading-relaxed text-lg">
               <p>
                 Hello! I am Chun Fu Chen, a Computational Material Scientist deeply passionate about the intersection of <strong className="text-emerald-700 font-medium">Artificial Intelligence and Science</strong>.
@@ -29,10 +34,12 @@ export default function About() {
                 View Curriculum Vitae (CV)
               </a>
             </div>
+            </Reveal>
           </div>
 
           {/* 右側：視覺意象區塊 */}
           <div className="md:w-1/2 w-full">
+            <Reveal delay={300}>
             <div className="aspect-square rounded-3xl bg-gradient-to-br from-emerald-100 to-stone-100 p-8 flex items-center justify-center border border-white shadow-xl shadow-stone-200/50">
               <div className="text-emerald-800/20">
                 <svg className="w-48 h-48" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -40,6 +47,7 @@ export default function About() {
                 </svg>
               </div>
             </div>
+            </Reveal>
           </div>
 
         </div>

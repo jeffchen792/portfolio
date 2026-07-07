@@ -42,7 +42,7 @@ export default function ParticleField() {
           const dy = a.y - b.y;
           const d = Math.hypot(dx, dy);
           if (d < LINK) {
-            ctx.strokeStyle = `rgba(16, 185, 129, ${0.15 * (1 - d / LINK)})`;
+            ctx.strokeStyle = `rgba(42, 69, 59, ${0.15 * (1 - d / LINK)})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -52,7 +52,7 @@ export default function ParticleField() {
         }
       }
       for (const p of particles) {
-        ctx.fillStyle = "rgba(5, 150, 105, 0.35)";
+        ctx.fillStyle = "rgba(51, 85, 72, 0.35)";
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();

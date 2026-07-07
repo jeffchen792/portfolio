@@ -72,6 +72,10 @@ portfolio/
 2. **About 右側是佔位圖**：目前只是一個 20% 透明度的燒杯 SVG，等待換成照片或更有意義的視覺。
 3. **PDF `<iframe>` 在手機上體驗差**：iOS Safari 常常只顯示第一頁且不能捲動，長期建議把海報轉成圖片預覽 + 「Open PDF」按鈕。
 4. **SEO/分享卡片未設定**：`index.html` 缺 `<meta name="description">`、Open Graph（`og:title/og:image`）標籤，貼到社群/LINE 不會有預覽。
+5. **Favicon 是 404 壞連結**：`index.html` 指向 `/vite.svg` 但 `public/` 沒有這個檔；`public/favicon.svg` 是模板殘留的紫色圖示非網站 Logo。
+6. **無平滑捲動、無自訂字體**：錨點跳轉是瞬移；字體是瀏覽器預設。
+
+以上問題全部已開票，見 `portfolio_backlog.md` 的 T0（地基修正）、T1、T2。
 
 ---
 

@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
       animation: {
         'blob': 'blob 15s infinite alternate ease-in-out',
         'blob-reverse': 'blob-reverse 18s infinite alternate ease-in-out',

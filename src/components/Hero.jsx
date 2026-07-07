@@ -15,7 +15,7 @@ export default function Hero() {
             Chun Fu Chen
           </h1>
           <h2 className="text-2xl md:text-4xl font-light text-stone-500">
-            Computational <span className="text-emerald-700 font-medium">Material Scientist</span>
+            Computational <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-500 font-medium">Material Scientist</span>
           </h2>
         </div>
 

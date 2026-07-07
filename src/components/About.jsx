@@ -10,7 +10,7 @@ export default function About() {
           <div className="md:w-1/2 space-y-6">
             <Reveal>
               <h2 className="text-3xl md:text-5xl font-bold text-stone-800 tracking-tight">
-                About <span className="text-emerald-700">Me</span>
+                About <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-500">Me</span>
               </h2>
             </Reveal>
             <Reveal delay={150}>

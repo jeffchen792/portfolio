@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 text-center space-y-8">
         <Reveal>
           <h2 className="text-3xl md:text-5xl font-bold text-stone-800 tracking-tight">
-            Get in <span className="text-emerald-700">Touch</span>
+            Get in <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-500">Touch</span>
           </h2>
           <p className="text-stone-600 max-w-xl mx-auto leading-relaxed">
             Interested in AI for Science, autonomous agents, or materials discovery?

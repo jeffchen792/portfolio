@@ -8,7 +8,7 @@ export default function Showcase() {
         <Reveal>
         <div className="space-y-4">
           <h2 className="text-3xl md:text-5xl font-bold text-stone-800 tracking-tight">
-            Featured <span className="text-emerald-700">Research</span>
+            Featured <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-500">Research</span>
           </h2>
           <p className="text-stone-500 text-sm md:text-base">
             Computational Material Science &amp; AI Integration

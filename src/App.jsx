@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import About from "./components/About"
 import Showcase from "./components/Showcase"
+import Publications from "./components/Publications"
 import Footer from "./components/Footer"
 import AuroraBackground from "./components/AuroraBackground"
 
@@ -14,6 +15,7 @@ function App() {
         <Hero />
         <About />
         <Showcase />
+        <Publications />
       </main>
       <Footer />
     </div>

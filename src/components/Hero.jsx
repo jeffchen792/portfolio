@@ -30,7 +30,7 @@ export default function Hero() {
           <a href="#projects" className="px-8 py-3 bg-emerald-700 hover:bg-emerald-800 text-white font-medium rounded-xl shadow-lg shadow-emerald-900/20 transition-all duration-300 transform hover:-translate-y-1">
             View Research
           </a>
-          <a href="#about" className="px-8 py-3 bg-transparent hover:bg-stone-100 text-emerald-800 border-2 border-emerald-700/20 hover:border-emerald-700/50 font-medium rounded-xl transition-all duration-300">
+          <a href="#contact" className="px-8 py-3 bg-transparent hover:bg-stone-100 text-emerald-800 border-2 border-emerald-700/20 hover:border-emerald-700/50 font-medium rounded-xl transition-all duration-300">
             Initialize Contact
           </a>
         </div>

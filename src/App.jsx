@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import About from "./components/About"
 import Showcase from "./components/Showcase"
+import Footer from "./components/Footer"
 import AuroraBackground from "./components/AuroraBackground"
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <About />
         <Showcase />
       </main>
+      <Footer />
     </div>
   )
 }

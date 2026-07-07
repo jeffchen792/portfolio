@@ -18,7 +18,8 @@ export default function Showcase() {
 
         {/* 海報展示區塊 (Glassmorphism 卡片) */}
         <Reveal delay={150}>
-        <div className="bg-white/70 backdrop-blur-md border border-stone-200 rounded-3xl overflow-hidden p-6 md:p-8 hover:border-emerald-300 transition-colors duration-300 shadow-xl shadow-stone-200/50">
+        <div className="rounded-3xl p-[1.5px] bg-gradient-to-r from-emerald-300/60 via-teal-200/40 to-emerald-300/60 hover:from-emerald-400 hover:to-teal-400 transition-all duration-500 shadow-xl shadow-stone-200/50">
+          <div className="bg-white/70 backdrop-blur-md rounded-[calc(1.5rem-1.5px)] overflow-hidden p-6 md:p-8">
           <div className="flex flex-col md:flex-row items-center gap-8">
             {/* 說明文字區 */}
             <div className="md:w-1/3 space-y-6">
@@ -46,6 +47,7 @@ export default function Showcase() {
                   Open PDF ↗
                 </a>
               </div>
+            </div>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@ import Hero from "./components/Hero"
 import About from "./components/About"
 import Showcase from "./components/Showcase"
 import Publications from "./components/Publications"
+import Skills from "./components/Skills"
 import Footer from "./components/Footer"
 import AuroraBackground from "./components/AuroraBackground"
 
@@ -16,6 +17,7 @@ function App() {
         <About />
         <Showcase />
         <Publications />
+        <Skills />
       </main>
       <Footer />
     </div>

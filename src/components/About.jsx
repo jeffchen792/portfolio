@@ -1,0 +1,49 @@
+export default function About() {
+  return (
+    <section id="about" className="py-24 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row gap-12 items-center">
+          
+          {/* 左側：文字介紹 */}
+          <div className="md:w-1/2 space-y-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-stone-800 tracking-tight">
+              About <span className="text-emerald-700">Me</span>
+            </h2>
+            <div className="space-y-4 text-stone-600 leading-relaxed text-lg">
+              <p>
+                Hello! I am Chun Fu Chen, a Computational Material Scientist deeply passionate about the intersection of <strong className="text-emerald-700 font-medium">Artificial Intelligence and Science</strong>.
+              </p>
+              <p>
+                My research focuses on leveraging autonomous AI Agents to accelerate material discovery and solve complex atomic-scale problems. I believe that by combining rigorous physical simulations with modern machine learning, we can unlock the next generation of sustainable materials.
+              </p>
+            </div>
+            
+            <div className="pt-4">
+              <a 
+                href="/Jeff_s_cv.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-emerald-800 border border-emerald-200 hover:border-emerald-500 shadow-sm hover:shadow-md rounded-xl font-medium transition-all"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                View Curriculum Vitae (CV)
+              </a>
+            </div>
+          </div>
+
+          {/* 右側：視覺意象區塊 */}
+          <div className="md:w-1/2 w-full">
+            <div className="aspect-square rounded-3xl bg-gradient-to-br from-emerald-100 to-stone-100 p-8 flex items-center justify-center border border-white shadow-xl shadow-stone-200/50">
+              <div className="text-emerald-800/20">
+                <svg className="w-48 h-48" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}

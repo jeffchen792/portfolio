@@ -33,20 +33,22 @@ export default function Showcase() {
               </div>
             </div>
 
-            {/* PDF 嵌入區 */}
-            <div className="md:w-2/3 w-full h-[600px] bg-stone-100 rounded-2xl overflow-hidden border border-stone-200 relative group shadow-inner">
-              <iframe 
-                src="/IAM_poster.pdf" 
-                className="w-full h-full border-none"
-                title="IAM Research Poster"
-              ></iframe>
-              
-              {/* 覆蓋層：在螢幕太小不好滑動時，提示可點擊右上角在新分頁開啟 */}
-              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <a href="/IAM_poster.pdf" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-emerald-700 text-white font-medium text-sm rounded-lg shadow-lg hover:bg-emerald-800 transition-colors">
-                  Open PDF ↗
-                </a>
-              </div>
+            {/* PDF 預覽圖片區 */}
+            <div className="md:w-2/3 w-full bg-stone-100 rounded-2xl overflow-hidden border border-stone-200 relative group shadow-inner">
+              <a href="/IAM_poster.pdf" target="_blank" rel="noopener noreferrer" className="block w-full h-full relative">
+                <img 
+                  src="/IAM_poster_preview.png" 
+                  alt="IAM Research Poster Preview"
+                  className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                />
+                
+                {/* 覆蓋層：提示可點擊在新分頁開啟 */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="px-4 py-2 bg-emerald-700 text-white font-medium text-sm rounded-lg shadow-lg hover:bg-emerald-800 transition-colors">
+                    Open PDF ↗
+                  </span>
+                </div>
+              </a>
             </div>
             </div>
           </div>

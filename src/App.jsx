@@ -7,13 +7,13 @@ import Skills from "./components/Skills"
 import Timeline from "./components/Timeline"
 import Footer from "./components/Footer"
 import AuroraBackground from "./components/AuroraBackground"
-import ParticleField from "./components/ParticleField"
+import AntigravityBackground from "./components/AntigravityBackground"
 
 function App() {
   return (
     <div className="min-h-screen font-sans selection:bg-emerald-200 selection:text-emerald-900 relative">
       <AuroraBackground />
-      <ParticleField />
+      <AntigravityBackground />
       <Navbar />
       <main>
         <Hero />

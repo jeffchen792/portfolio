@@ -9,6 +9,7 @@
 > 5. 所有新樣式必須沿用設計規範：主色 `emerald-700`、卡片 `rounded-3xl`、按鈕 `rounded-xl`、section `py-24` + `max-w-7xl mx-auto px-6`、標題 `text-3xl md:text-5xl font-bold` 且一個詞上 `text-emerald-700`。
 > 6. 所有動畫必須尊重 `prefers-reduced-motion`（票內程式碼已處理，別刪掉那段）。
 > 7. 票內的程式碼片段是「已審核過的正確答案」，**優先直接使用**，不要自由發揮重寫。
+> 8. **開發與部署規則**：本專案已部署於 Vercel，只要 `git commit` & `push` 就會自動更新線上版。AI 執行任務時，**請勿擅自以背景執行 `npm run dev` 並常駐**。如需預覽測試，測試後請自行 kill process。
 >
 > **全域 Definition of Done**：`npm run dev` 目視正常、`npm run build` 無錯誤、手機寬度（375px）不破版。
 

@@ -223,11 +223,13 @@ function QuantumFieldBg() {
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
+      // Push some stars closer to camera so hero can see them
+      const zBias = i < 100 ? -5 - Math.random() * 20 : (Math.random() - 0.5) * 300;
       positions[i * 3] = (Math.random() - 0.5) * 200;
       positions[i * 3 + 1] = (Math.random() - 0.5) * 120;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 300;
-      const hue = 0.45 + Math.random() * 0.15; // green-cyan range
-      const c = new THREE.Color().setHSL(hue, 0.6, 0.3 + Math.random() * 0.5);
+      positions[i * 3 + 2] = zBias;
+      const hue = 0.45 + Math.random() * 0.15;
+      const c = new THREE.Color().setHSL(hue, 0.6, 0.5 + Math.random() * 0.5);
       colors[i * 3] = c.r;
       colors[i * 3 + 1] = c.g;
       colors[i * 3 + 2] = c.b;
@@ -247,7 +249,7 @@ function QuantumFieldBg() {
   return (
     <points ref={starsRef}>
       <bufferGeometry {...starsGeo} />
-      <pointsMaterial size={0.2} vertexColors transparent opacity={0.7} blending={THREE.AdditiveBlending} depthWrite={false} />
+      <pointsMaterial size={0.5} vertexColors transparent opacity={0.9} blending={THREE.AdditiveBlending} depthWrite={false} />
     </points>
   );
 }

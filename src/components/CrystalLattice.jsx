@@ -32,7 +32,7 @@ function Lattice() {
       {atoms.map((p, i) => (
         <mesh key={i} position={p}>
           <sphereGeometry args={[0.22, 24, 24]} />
-          <meshStandardMaterial color="#2A453B" metalness={0.3} roughness={0.4} />
+          <meshStandardMaterial color="#10b981" metalness={0.2} roughness={0.3} emissive="#064e3b" emissiveIntensity={0.3} />
         </mesh>
       ))}
       {bonds.map(([a, b], i) => {
@@ -48,7 +48,7 @@ function Lattice() {
         return (
           <mesh key={`b${i}`} position={mid} quaternion={quat}>
             <cylinderGeometry args={[0.04, 0.04, len, 8]} />
-            <meshStandardMaterial color="#D4F134" />
+            <meshStandardMaterial color="#22d3ee" emissive="#06b6d4" emissiveIntensity={0.5} />
           </mesh>
         );
       })}

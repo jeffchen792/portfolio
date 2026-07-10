@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { initSmoothScroll } from "./lib/scroll";
 import QuantumExperience from "./components/QuantumExperience";
 import CustomCursor from "./components/CustomCursor";
@@ -12,22 +12,14 @@ import Timeline from "./components/Timeline";
 import Footer from "./components/Footer";
 
 function App() {
-  const [fontsReady, setFontsReady] = useState(false);
-
   useEffect(() => {
     const cleanup = initSmoothScroll();
-    let alive = true;
-    document.fonts.ready.then(() => alive && setFontsReady(true));
-    return () => {
-      alive = false;
-      cleanup();
-    };
+    return cleanup;
   }, []);
 
   return (
     <div className="min-h-screen selection:bg-quantum/30 selection:text-quantum-bright">
-      {/* 3D Quantum Experience — fixed background, camera driven by scroll */}
-      {fontsReady && <QuantumExperience />}
+      <QuantumExperience />
 
       {/* Custom cursor */}
       <CustomCursor />

@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen font-sans selection:bg-quantum/30 selection:text-quantum-bright">
+    <div className="min-h-screen selection:bg-quantum/30 selection:text-quantum-bright">
       {/* 3D Quantum Experience — fixed background, camera driven by scroll */}
       {fontsReady && <QuantumExperience />}
 

@@ -9,7 +9,7 @@ function CrystalLattice3D({ position, scale = 1, color = "#10b981", emissive = "
   const groupRef = useRef();
   const { atoms, bonds } = useMemo(() => {
     const atoms = [];
-    const N = 4;
+    const N = 3;
     const spacing = 2.2;
     const offset = ((N - 1) * spacing) / 2;
     for (let x = 0; x < N; x++)
@@ -72,20 +72,20 @@ function MolecularCluster({ position }) {
   const groupRef = useRef();
   const particles = useMemo(() => {
     const p = [];
-    const centerAtoms = 7;
+    const centerAtoms = 5;
     for (let i = 0; i < centerAtoms; i++) {
       const theta = (i / centerAtoms) * Math.PI * 2;
       const phi = Math.acos(2 * (i / centerAtoms) - 1);
-      const r = 3;
+      const r = 2.5;
       p.push({
         pos: [Math.sin(phi) * Math.cos(theta) * r, Math.sin(phi) * Math.sin(theta) * r, Math.cos(phi) * r],
-        size: 0.3,
+        size: 0.35,
       });
     }
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 12; i++) {
       p.push({
-        pos: [(Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10],
-        size: 0.08 + Math.random() * 0.12,
+        pos: [(Math.random() - 0.5) * 8, (Math.random() - 0.5) * 8, (Math.random() - 0.5) * 8],
+        size: 0.06 + Math.random() * 0.1,
       });
     }
     return p;
@@ -129,7 +129,7 @@ function OrbitalClouds({ position }) {
 
   const particlesRef = useRef([]);
   const particleData = useMemo(() => {
-    return Array.from({ length: 200 }, () => ({
+    return Array.from({ length: 100 }, () => ({
       baseAngle: Math.random() * Math.PI * 2,
       radius: 3 + Math.random() * 16,
       height: (Math.random() - 0.5) * 8,
@@ -179,7 +179,7 @@ function OrbitalClouds({ position }) {
 function BondFormation({ position, progress }) {
   const ref = useRef();
   const particles = useMemo(() =>
-    Array.from({ length: 80 }, () => ({
+    Array.from({ length: 50 }, () => ({
       angle: Math.random() * Math.PI * 2,
       radius: 2 + Math.random() * 8,
       height: (Math.random() - 0.5) * 6,
@@ -218,7 +218,7 @@ function BondFormation({ position, progress }) {
 function QuantumFieldBg() {
   const starsRef = useRef();
   const starsGeo = useMemo(() => {
-    const count = 2000;
+    const count = 800;
     const geo = new THREE.BufferGeometry();
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);

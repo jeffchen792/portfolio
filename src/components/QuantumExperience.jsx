@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Bloom, ChromaticAberration, EffectComposer, Vignette } from "@react-three/postprocessing";
 import { Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import { scrollState, useScrollStore } from "../lib/scroll";
+import { scrollState } from "../lib/scroll";
 import CameraRig from "./CameraRig";
 import QuantumWorld from "./QuantumWorld";
 
@@ -42,7 +42,9 @@ export default function QuantumExperience() {
   const chromaRef = useRef(null);
   const [skip3D, setSkip3D] = useState(false);
   const weak = isTooWeak();
-  const contactProgress = useScrollStore((s) => s.progress > 0.88 ? (s.progress - 0.88) / 0.12 : 0);
+  // 注意：這個元件內「絕不」訂閱會隨捲動變化的 React state。
+  // 任何 re-render 都會讓 EffectComposer 重新評估並崩潰（TROUBLESHOOTING.md #7）。
+  // 捲動資料一律由 useFrame 讀 scrollState（mutable，零 re-render）。
 
   // Performance watchdog: only after 3s warmup, much higher tolerance
   useEffect(() => {
@@ -79,7 +81,6 @@ export default function QuantumExperience() {
   return (
     <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden>
       <Canvas
-        events={() => undefined}
         dpr={[1, prefersReduced ? 1 : 1.25]}
         gl={{
           antialias: false,
@@ -101,7 +102,7 @@ export default function QuantumExperience() {
           <pointLight position={[8, -2, -95]} intensity={0.8} color="#a78bfa" distance={20} />
 
           <CameraRig />
-          <QuantumWorld contactProgress={contactProgress} />
+          <QuantumWorld />
 
           <EffectComposer multisampling={prefersReduced ? 0 : 2}>
             <Bloom ref={bloomRef} intensity={prefersReduced ? 0.3 : 0.6}

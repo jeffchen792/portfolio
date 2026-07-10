@@ -175,8 +175,12 @@ function OrbitalClouds({ position }) {
   );
 }
 
-/** ── Bond Formation Effect (Contact climax) ── */
-function BondFormation({ position, progress }) {
+/** ── Bond Formation Effect (Contact climax) ──
+ * progress 由 useFrame 內直接讀 scrollState 計算，
+ * 避免 React re-render（re-render 會觸發 EffectComposer 的
+ * JSON.stringify 循環引用崩潰，見 TROUBLESHOOTING.md #7）
+ */
+function BondFormation({ position }) {
   const ref = useRef();
   const particles = useMemo(() =>
     Array.from({ length: 50 }, () => ({
@@ -190,6 +194,8 @@ function BondFormation({ position, progress }) {
   useFrame((state) => {
     if (!ref.current) return;
     const t = state.clock.elapsedTime;
+    const p = scrollState.progress;
+    const progress = p > 0.88 ? (p - 0.88) / 0.12 : 0;
     particles.forEach((p, i) => {
       const child = ref.current.children[i];
       if (!child) return;
@@ -247,15 +253,14 @@ function QuantumFieldBg() {
   });
 
   return (
-    <points ref={starsRef}>
-      <bufferGeometry {...starsGeo} />
+    <points ref={starsRef} geometry={starsGeo}>
       <pointsMaterial size={0.5} vertexColors transparent opacity={0.9} blending={THREE.AdditiveBlending} depthWrite={false} />
     </points>
   );
 }
 
 /** ── Main Quantum World ── */
-export default function QuantumWorld({ contactProgress = 0 }) {
+export default function QuantumWorld() {
   return (
     <group>
       <QuantumFieldBg />
@@ -263,7 +268,7 @@ export default function QuantumWorld({ contactProgress = 0 }) {
       <MolecularCluster position={MOLECULE_CENTER} />
       <OrbitalClouds position={ORBITAL_CENTER} />
       <CrystalLattice3D position={PROJECTS_CRYSTAL.position} scale={1.5} color="#a78bfa" emissive="#7c3aed" />
-      <BondFormation position={BOND_CENTER} progress={contactProgress} />
+      <BondFormation position={BOND_CENTER} />
     </group>
   );
 }

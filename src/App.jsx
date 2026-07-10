@@ -1,5 +1,6 @@
-import { useSmoothScroll } from "./lib/scroll";
-import QuantumField from "./components/QuantumField";
+import { useEffect, useState } from "react";
+import { initSmoothScroll } from "./lib/scroll";
+import QuantumExperience from "./components/QuantumExperience";
 import CustomCursor from "./components/CustomCursor";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -11,21 +12,29 @@ import Timeline from "./components/Timeline";
 import Footer from "./components/Footer";
 
 function App() {
-  useSmoothScroll();
+  const [fontsReady, setFontsReady] = useState(false);
+
+  useEffect(() => {
+    const cleanup = initSmoothScroll();
+    let alive = true;
+    document.fonts.ready.then(() => alive && setFontsReady(true));
+    return () => {
+      alive = false;
+      cleanup();
+    };
+  }, []);
 
   return (
-    <div className="min-h-screen font-sans selection:bg-quantum/30 selection:text-quantum-bright relative">
-      {/* 3D Quantum background */}
-      <QuantumField />
+    <div className="min-h-screen font-sans selection:bg-quantum/30 selection:text-quantum-bright">
+      {/* 3D Quantum Experience — fixed background, camera driven by scroll */}
+      {fontsReady && <QuantumExperience />}
 
       {/* Custom cursor */}
       <CustomCursor />
 
-      {/* Navigation */}
+      {/* Content — normal document flow, scroll drives the 3D camera journey */}
       <Navbar />
-
-      {/* Main content */}
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Showcase />
@@ -33,7 +42,6 @@ function App() {
         <Skills />
         <Timeline />
       </main>
-
       <Footer />
     </div>
   );

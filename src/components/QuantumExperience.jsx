@@ -64,6 +64,7 @@ export default function QuantumExperience() {
   return (
     <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden>
       <Canvas
+        style={{ pointerEvents: "none" }}
         dpr={[1, lowPower ? 1 : 1.25]}
         gl={{
           antialias: false,

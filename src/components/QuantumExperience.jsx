@@ -73,7 +73,7 @@ export default function QuantumExperience() {
         }}
         camera={{ position: [0, 0.5, 10], fov: 50, near: 0.1, far: 300 }}
         onCreated={(state) => {
-          state.scene.fog = new THREE.FogExp2("#050310", 0.003);
+          state.scene.fog = new THREE.FogExp2("#050310", 0.0012);
         }}
       >
         <Suspense fallback={null}>

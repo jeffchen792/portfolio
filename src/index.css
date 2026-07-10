@@ -10,7 +10,7 @@
   
   body {
     @apply bg-space-deep text-star antialiased selection:bg-quantum/30 selection:text-quantum-bright;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Source Serif 4', 'Georgia', serif;
     overflow-x: hidden;
     cursor: none;
   }

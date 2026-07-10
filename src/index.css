@@ -49,10 +49,9 @@
     @apply bg-space-deep text-star antialiased selection:bg-quantum/30 selection:text-quantum-bright;
     font-family: 'Anthropic Serif', 'Georgia', serif;
     overflow-x: hidden;
-    cursor: none;
   }
 
-  /* Hide native cursor */
+  /* Custom cursor hides native cursor (only on pointer devices) */
   @media (pointer: fine) {
     body, a, button, [role="button"], input, textarea {
       cursor: none !important;

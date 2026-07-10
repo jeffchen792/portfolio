@@ -57,12 +57,12 @@ export default function QuantumExperience() {
 
   if (skip3D) {
     return (
-      <div className="fixed inset-0 z-0" style={{ background: "radial-gradient(ellipse at 50% 30%, rgba(16,185,129,0.08) 0%, #02010a 70%)" }} />
+      <div className="fixed inset-0 z-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 30%, rgba(16,185,129,0.08) 0%, #02010a 70%)" }} />
     );
   }
 
   return (
-    <div className="fixed inset-0 z-0" aria-hidden>
+    <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden>
       <Canvas
         dpr={[1, lowPower ? 1 : 1.25]}
         gl={{
